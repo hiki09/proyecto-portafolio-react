@@ -10,6 +10,7 @@ import {
   Snackbar,
   Alert,
   Divider,
+  Fade,
 } from '@mui/material';
 import SendIcon from '@mui/icons-material/Send';
 import EmailIcon from '@mui/icons-material/Email';
@@ -81,119 +82,121 @@ const Contact = () => {
   };
 
   return (
-    <Container maxWidth="lg" id="contact">
-      <Paper elevation={3} sx={{ p: 4, mb: 4, mt: 6 }}>
-        <Typography variant="h4" gutterBottom>
-          Contacto
-        </Typography>
-        <Divider sx={{ mb: 4 }} />
+    <Fade in={true} timeout={500}>
+      <Container maxWidth="lg" id="contact">
+        <Paper elevation={3} sx={{ p: 4, mb: 4, mt: 6 }}>
+          <Typography variant="h4" gutterBottom>
+            Contacto
+          </Typography>
+          <Divider sx={{ mb: 4 }} />
 
-        <Grid container spacing={4}>
-          {/* Formulario de Contacto */}
-          <Grid item xs={12} md={7}>
-            <form onSubmit={handleSubmit}>
-              <Grid container spacing={2}>
-                <Grid item xs={12} sm={6}>
-                  <TextField
-                    fullWidth
-                    label="Nombre"
-                    name="name"
-                    variant="outlined"
-                    value={formData.name}
-                    onChange={handleChange}
-                    error={!!errors.name}
-                    helperText={errors.name}
-                    required
-                  />
+          <Grid container spacing={4}>
+            {/* Formulario de Contacto */}
+            <Grid item xs={12} md={7}>
+              <form onSubmit={handleSubmit}>
+                <Grid container spacing={2}>
+                  <Grid item xs={12} sm={6}>
+                    <TextField
+                      fullWidth
+                      label="Nombre"
+                      name="name"
+                      variant="outlined"
+                      value={formData.name}
+                      onChange={handleChange}
+                      error={!!errors.name}
+                      helperText={errors.name}
+                      required
+                    />
+                  </Grid>
+                  <Grid item xs={12} sm={6}>
+                    <TextField
+                      fullWidth
+                      label="Email"
+                      name="email"
+                      variant="outlined"
+                      value={formData.email}
+                      onChange={handleChange}
+                      error={!!errors.email}
+                      helperText={errors.email}
+                      required
+                    />
+                  </Grid>
+                  <Grid item xs={12}>
+                    <TextField
+                      fullWidth
+                      label="Mensaje"
+                      name="message"
+                      variant="outlined"
+                      value={formData.message}
+                      onChange={handleChange}
+                      error={!!errors.message}
+                      helperText={errors.message}
+                      multiline
+                      rows={6}
+                      required
+                    />
+                  </Grid>
+                  <Grid item xs={12}>
+                    <Button
+                      type="submit"
+                      variant="contained"
+                      color="primary"
+                      endIcon={<SendIcon />}
+                      size="large"
+                    >
+                      Enviar Mensaje
+                    </Button>
+                  </Grid>
                 </Grid>
-                <Grid item xs={12} sm={6}>
-                  <TextField
-                    fullWidth
-                    label="Email"
-                    name="email"
-                    variant="outlined"
-                    value={formData.email}
-                    onChange={handleChange}
-                    error={!!errors.email}
-                    helperText={errors.email}
-                    required
-                  />
-                </Grid>
-                <Grid item xs={12}>
-                  <TextField
-                    fullWidth
-                    label="Mensaje"
-                    name="message"
-                    variant="outlined"
-                    value={formData.message}
-                    onChange={handleChange}
-                    error={!!errors.message}
-                    helperText={errors.message}
-                    multiline
-                    rows={6}
-                    required
-                  />
-                </Grid>
-                <Grid item xs={12}>
-                  <Button
-                    type="submit"
-                    variant="contained"
-                    color="primary"
-                    endIcon={<SendIcon />}
-                    size="large"
-                  >
-                    Enviar Mensaje
-                  </Button>
-                </Grid>
-              </Grid>
-            </form>
+              </form>
+            </Grid>
+
+            {/* Información de Contacto */}
+            <Grid item xs={12} md={5}>
+              <Box sx={{ p: 2 }}>
+                <Typography variant="h5" gutterBottom>
+                  Información de Contacto
+                </Typography>
+                <Typography variant="body1" paragraph>
+                  ¿Tienes alguna pregunta o propuesta? No dudes en ponerte en contacto conmigo.
+                </Typography>
+
+                <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
+                  <EmailIcon sx={{ mr: 2, color: 'primary.main' }} />
+                  <Typography variant="body1">
+                    matias.ecd09@gmail.com
+                  </Typography>
+                </Box>
+
+                <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
+                  <LinkedInIcon sx={{ mr: 2, color: 'primary.main' }} />
+                  <Typography variant="body1">
+                    <a href="https://linkedin.com/in/matias-cardenas-duran-064590261" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
+                      linkedin.com/in/matias-cardenas-duran-064590261
+                    </a>
+                  </Typography>
+                </Box>
+
+                <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                  <GitHubIcon sx={{ mr: 2, color: 'primary.main' }} />
+                  <Typography variant="body1">
+                    <a href="https://github.com/hiki09" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
+                      github.com/hiki09
+                    </a>
+                  </Typography>
+                </Box>
+              </Box>
+            </Grid>
           </Grid>
+        </Paper>
 
-          {/* Información de Contacto */}
-          <Grid item xs={12} md={5}>
-            <Box sx={{ p: 2 }}>
-              <Typography variant="h5" gutterBottom>
-                Información de Contacto
-              </Typography>
-              <Typography variant="body1" paragraph>
-                ¿Tienes alguna pregunta o propuesta? No dudes en ponerte en contacto conmigo.
-              </Typography>
-
-              <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-                <EmailIcon sx={{ mr: 2, color: 'primary.main' }} />
-                <Typography variant="body1">
-                  tucorreo@ejemplo.com
-                </Typography>
-              </Box>
-
-              <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-                <LinkedInIcon sx={{ mr: 2, color: 'primary.main' }} />
-                <Typography variant="body1">
-                  <a href="https://linkedin.com/in/tu-perfil" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
-                    linkedin.com/in/tu-perfil
-                  </a>
-                </Typography>
-              </Box>
-
-              <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                <GitHubIcon sx={{ mr: 2, color: 'primary.main' }} />
-                <Typography variant="body1">
-                  <a href="https://github.com/tu-usuario" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
-                    github.com/tu-usuario
-                  </a>
-                </Typography>
-              </Box>
-            </Box>
-          </Grid>
-        </Grid>
-      </Paper>
-
-      <Snackbar open={openSnackbar} autoHideDuration={6000} onClose={handleCloseSnackbar}>
-        <Alert onClose={handleCloseSnackbar} severity="success" sx={{ width: '100%' }}>
-          ¡Mensaje enviado correctamente! Me pondré en contacto contigo pronto.
-        </Alert>
-      </Snackbar>
-    </Container>
+        <Snackbar open={openSnackbar} autoHideDuration={6000} onClose={handleCloseSnackbar}>
+          <Alert onClose={handleCloseSnackbar} severity="success" sx={{ width: '100%' }}>
+            ¡Mensaje enviado correctamente! Me pondré en contacto contigo pronto.
+          </Alert>
+        </Snackbar>
+      </Container>
+    </Fade>
   );
 };
 

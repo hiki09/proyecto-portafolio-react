@@ -42,7 +42,7 @@ const Header = () => {
     ];
 
     return (
-        <AppBar position="sticky">
+        <AppBar position="sticky" sx={{ transition: 'background-color 0.3s ease' }}>
             <Toolbar>
                 <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                     Mi Portafolio

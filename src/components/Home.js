@@ -16,14 +16,19 @@ import WebIcon from "@mui/icons-material/Web";
 const Home = () => {
     // Lista de habilidades tecnicas
     const skills = [
-        { name: 'JavaScript', category: 'frontend'},
+        { name: 'C#', category: 'backend' },
+        { name: '.NET 6', category: 'backend' },
+        { name: 'AWS S3', category: 'backend' },
+        { name: 'SQL Server', category: 'backend' },
+        { name: 'JavaScript', category: 'frontend' },
         { name: 'React', category: 'frontend' },
-        { name: 'HTML/CSS', category: 'frontend' },
-        { name: 'Node.js', category: 'backend' },
         { name: 'Python', category: 'backend' },
-        { name: 'SQL', category: 'backend' },
+        { name: 'HTML/CSS', category: 'frontend' },
+        { name: 'Metodologías Ágiles', category: 'tools' },
+        { name: 'Serilog', category: 'tools' },
+        { name: 'Jira', category: 'tools' },
         { name: 'Git', category: 'tools' },
-        { name: 'Docker', category: 'tools' },
+        // Agrega más habilidades según necesites
     ];
 
     return (
@@ -59,7 +64,7 @@ const Home = () => {
                     Matías Cárdenas
                 </Typography>
                 <Typography variant="h5" color="text.secondary" paragraph>
-                    Desarrollador Web | Especialista en JavaScript y Python
+                    Desarrollador Web | Conocimientos en JavaScript, Python y C#
                 </Typography>
             </Box>
 
@@ -70,9 +75,9 @@ const Home = () => {
                 </Typography>
                 <Divider sx={{ mb: 2 }} />
                 <Typography variant="body1" paragraph>
-                    Soy un desarrollador apasionado por crear soluciones tecnológicas que
-                    resuelvan problemas reales. Con experiencia en desarrollo web full
-                    stack, me especializo en JavaScript y Python.                    
+                    Ingeniero en Informática con experiencia en desarrollo de software y automatización de procesos. 
+                    Durante mi práctica profesional, adquirí habilidades en desarrollo Full Stack, integración con AWS S3,
+                    auditoría de aplicaciones y optimización de procesos. Busco oportunidades como Desarrollador Web Junior o en roles similares dentro del área de desarrollo de software.
                 </Typography>
                 <Typography variant="body1">
                     Mi objetivo es combinar mis habilidades técnicas con mi creatividad
